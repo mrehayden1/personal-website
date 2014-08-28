@@ -1,14 +1,38 @@
-<html>
+<html class="front">
   <head>
     <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      // Smooth scrolling for navbar links.
+      jQuery(function($) {
+        $('#main-menu a').click(function(e){
+          var $targetName = $(this).attr('href').slice(1);
+          var $target = $('[id=' + $targetName + ']');
+          var $targetOffset = $target.offset().top;
+          $('body').animate({
+            scrollTop: $targetOffset
+          }, 1500, "easeOutQuad");
+          e.preventDefault();
+        });
+      });
+    </script>
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//v2.zopim.com/?2NcrYhQZ5jNM20e0Idjqf0ZK2SO8QCKv';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zopim Live Chat Script-->
   </head>
 
   <body>
-    <!--nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -17,75 +41,63 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">FMAP3</a>
+          <span class="navbar-brand">FMAP3</span>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
+            <li><a href="#home"><span class="fa fa-home"></span> Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
-    </nav-->
+    </nav>
 
-    <div id="section-one" class="jumbotron section">
+    <section id="home" class="jumbotron">
       <div class="container">
-        <div class="content">
+        <div class="content text-center">
           <h1>Matthew Hayden,<br/><small><span class="fa fa-drupal"></span> Drupal Developer + DevOps</small></h1>
-          <address>
-            <dl class="dl-horizontal">
-              <dt><span class="fa fa-map-marker"></span>&nbsp<span class="sr-only">Location</span></dt> <dd>SE15 London, U.K.</dd>
-              <dt><span class="fa fa-envelope"></span>&nbsp<span class="sr-only">E-Mail</span></dt> <dd><a href="mailto:hello@fmap3.com">hello@fmap3.com</a></dd>
-              <dt><span class="fa fa-file-pdf-o"></span>&nbsp<span class="sr-only">C.V.</span></dt> <dd><a href="matthew-hayden-cv.pdf">View my C.V.</a>&nbsp;<span class="fa fa-external-link"></span></dd>
-            </dl>
-          </address>
-          <p class="text-center">Freelance Drupal developer and DevOps specialist working remotely and on site in London.</p>
+          
+          <p>Freelance Drupal developer and DevOps specialist working in London.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!--div class="jumbotron section">
+    <section id="about" class="jumbotron">
       <div class="container">
         <div class="content">
           <div class="row text-center">
             <div class="col-md-12">
-              <h2>Skills & Expertise</h2>
-              <p>Lorem ipsum.</p>
+              <h2>About Me</h2>
+              <p>This is me.</p>
+              <p><img src="resources/images/matthew.jpg" alt="Matthew Hayden" /></p>
+              <p><span class="fa fa-map-marker"></span>&nbsp; I live in South London, SE15, U.K.</p>
+              <p><span class="fa fa-code"></span>&nbsp; I have been programming for over 15 years</p>
+              <p>Read about my most recent experience in my C.V.</p>
+              <p><span class="fa fa-file-pdf-o"></span>&nbsp; <a href="matthew-hayden-cv.pdf">Download a copy</a></p>
             </div>
           </div>
         </div>
-      </div-->
-    </div>
+      </div>
+    </section>
+
+    <section id="contact" class="jumbotron">
+      <div class="container">
+        <div class="content text-center">
+          <h1>Say Hello</h1>
+          <p>
+            <span class="fa fa-envelope"></span>&nbsp <a href="mailto:hello@fmap3.com">hello@fmap3.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container">
+      <div class="text-center">
+        <small>Site designed and built by Matthew Hayden &copy; 2014</small>
+      </div>
+    </footer>
+
+    
   </body>
 </html>

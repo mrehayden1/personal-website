@@ -1,6 +1,10 @@
-.section {
-  margin-bottom: 0;
-  height: 100%;
+.front body {
+  font-family: @font-family-sans-serif;
+}
+
+section {
+  margin-bottom: 0 !important;
+  min-height: 100%;
 
   .container, .container-fluid {
     min-height: 100%;
@@ -21,7 +25,7 @@
   }
 }
 
-#section-one {
+#home {
   background: url(../images/front.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -36,24 +40,11 @@
       color: @headings-color;
     }
   }
+}
 
-  address {
-    font-size: @font-size-h2;
-    margin-bottom: 44px;
-
-    a {
-      color: @headings-color;
-    }
+#about {
+  background-color: #fff;
+  img {
+    border-radius: 240px;
   }
-
-  dt {
-    text-align: center;
-    width: 43px;
-  }
-  @media (min-width: @screen-sm-min) {
-    dd {
-      margin-left: 43px;
-    }
-  }
-
 }
