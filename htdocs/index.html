@@ -10,7 +10,7 @@
     <script>
       // Smooth scrolling for navbar links.
       jQuery(function($) {
-        $('#main-menu a').click(function(e){
+        $('a[data-scroll]').click(function(e){
           var $targetName = $(this).attr('href').slice(1);
           var $target = $('[id=' + $targetName + ']');
           var $targetOffset = $target.offset().top;
@@ -53,13 +53,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <span class="navbar-brand">FMAP3</span>
+          <a href="#home" class="navbar-brand">FMAP3</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#home"><span class="fa fa-home"></span> Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-target="#carousel-about" data-slide-to="0" data-scroll>About</a></li>
+            <li><a href="#contact" data-scroll>Contact</a></li>
           </ul>
         </div>
       </div>
@@ -67,26 +66,67 @@
 
     <section id="home" class="jumbotron">
       <div class="container">
-        <div class="content text-center">
-          <h1>Matthew Hayden,<br/><small><span class="fa fa-drupal"></span> Drupal Developer + DevOps</small></h1>
-          
-          <p>Freelance Drupal developer and DevOps specialist working in London.</p>
+        <div class="row">
+          <div class="content-wrapper">
+            <div class="content text-center">
+              <h1>Matthew Hayden,<br/><small><span class="fa fa-drupal"></span> Drupal Developer + DevOps</small></h1>
+              <p>Experienced Backend/Frontend Developer and DevOps,<br/>London SE15.</p>
+              <a href="#about" data-target="#carousel-about" data-slide-to="0" data-scroll class="btn btn-lg btn-primary">Read more <i class="fa fa-angle-double-right"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="jumbotron">
-      <div class="container">
-        <div class="content">
-          <div class="row text-center">
-            <div class="col-md-12">
-              <h2>About Me</h2>
-              <p>This is me.</p>
-              <p><img src="resources/images/matthew.jpg" alt="Matthew Hayden" /></p>
-              <p><span class="fa fa-map-marker"></span>&nbsp; I live in South London, SE15, U.K.</p>
-              <p><span class="fa fa-code"></span>&nbsp; I have been programming for over 15 years</p>
-              <p>Read about my most recent experience in my C.V.</p>
-              <p><span class="fa fa-file-pdf-o"></span>&nbsp; <a href="matthew-hayden-cv.pdf">Download a copy</a></p>
+    <section id="about">
+      <div class="container-fluid">
+        <div class="row">
+          <div id="carousel-about" class="carousel slide" data-interval="false">
+            <!-- Wrapper for slides -->
+            <div id="carousel-about-picture" class="carousel-inner">
+              <div class="item active">
+                <div class="jumbotron">
+                  <div class="content-wrapper">
+                    <div class="content text-center">
+                      <h2><span class="fa fa-user"></span><br/>About Me</h2>
+                      <p>This is me.</p>
+                      <p><img id="about-headshot" src="resources/images/matthew.jpg" alt="Matthew Hayden" /></p>
+
+                      <div class="carousel-controls">
+                        <a data-target="#carousel-about" data-slide-to="1" class="btn btn-md btn-default">Next <i class="fa fa-angle-double-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="carousel-about-live" class="item">
+                <div class="jumbotron">
+                  <div class="content-wrapper">
+                    <div class="content text-center">
+                      <h2><span class="fa fa-map-marker"></span><br/>About Me</h2>
+                      <p>I live in South London</p>
+                      <div class="carousel-controls">
+                        <a data-target="#carousel-about" data-slide-to="2" class="btn btn-md btn-default">Next <i class="fa fa-angle-double-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="jumbotron">
+                  <div class="content-wrapper">
+                    <div class="content text-center">
+                      <h2><span class="fa fa-code"></span><br/>About Me</h2>
+                      <p>I have a lot of experience and have been programming for almost 15 years.</p>
+                      <p>Read more in my C.V.</p>
+                      <p><a href="matthew-hayden-cv.pdf" class="btn btn-primary"><span class="fa fa-file-pdf-o"></span>&nbsp; Download a copy</a></p>
+                      <div class="carousel-controls">
+                        <a href="#contact" data-scroll class="btn btn-md btn-default">Next <i class="fa fa-angle-double-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -95,21 +135,23 @@
 
     <section id="contact" class="jumbotron">
       <div class="container">
-        <div class="content text-center">
-          <h1>Say Hello</h1>
-          <p>
-            <span class="fa fa-envelope"></span>&nbsp <a href="mailto:hello@fmap3.com">hello@fmap3.com</a>
-          </p>
+        <div class="content-wrapper">
+          <div class="content text-center">
+            <h1>Say Hello</h1>
+            <p>
+              <span class="fa fa-envelope"></span>&nbsp <a href="mailto:hello@fmap3.com">hello@fmap3.com</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <footer class="container">
-      <div class="text-center">
-        <small>Site designed and built by Matthew Hayden &copy; 2014</small>
+      <div class="content-wrapper">
+        <div class="content text-center">
+          <small>Site designed and built by Matthew Hayden &copy; 2014</small>
+        </div>
       </div>
     </footer>
-
-    
   </body>
 </html>

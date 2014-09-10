@@ -2,30 +2,35 @@
   font-family: @font-family-sans-serif;
 }
 
-section {
+.front .jumbotron {
   margin-bottom: 0 !important;
-  min-height: 100%;
+}
+
+.front section {
+  height: 100%;
 
   .container, .container-fluid {
-    min-height: 100%;
+    height: 100%;
+  }
 
-    &:before {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-      margin-right: -0.25em; /* Adjusts for spacing */
-    }
+  .content-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
   }
 
   .content {
-    display: inline-block;
+    display: table-cell;
+    text-align: center;
     vertical-align: middle;
-    width: 100%;
   }
 }
 
-#home {
+.front .carousel-control {
+  background-image: none;
+}
+
+.front #home {
   background: url(../images/front.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -40,11 +45,42 @@ section {
       color: @headings-color;
     }
   }
+
+  p {
+    margin-bottom: 44px;
+  }
 }
 
-#about {
-  background-color: #fff;
-  img {
+.front #about {
+  .carousel-controls {
+    margin-top: 44px;
+  }
+  #about-headshot {
     border-radius: 240px;
   }
+  .jumbotron {
+    padding: 0;
+  }
+  .item {
+    // The carousel css positions carousel items absolutely, breaking the full
+    // height appearance.
+    height: 100%;
+  }
+  #carousel-about-live {
+    background: url('http://maps.googleapis.com/maps/api/staticmap?center=peckham&zoom=12&scale=2&size=1280x1080&maptype=terrain&sensor=false&format=png&visual_refresh=true" alt="Google Map of peckham') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+      -o-background-size: cover;
+         background-size: cover;
+    .content {
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .jumbotron {
+      background-color: transparent;
+    }
+  }
+}
+
+.front #contact {
+  background-color: #fff;
 }
